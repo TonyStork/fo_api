@@ -1,4 +1,6 @@
 name: Refresh Feed
+permissions:
+  contents: write
 on: [push]
   #schedule:
     #- cron: '31 19 * * 0-6' 
