@@ -1,6 +1,6 @@
-on:
-  schedule:
-    on: [push]
+name: Refresh Feed
+on: [push]
+  #schedule:
     #- cron: '31 19 * * *' 
 
 jobs:
