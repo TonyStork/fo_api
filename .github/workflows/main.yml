@@ -1,0 +1,14 @@
+on:
+  schedule:
+    - cron: '10 16 * * *' 
+    - cron: '30 5 * * 2,4'
+
+jobs:
+  refresh-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://www.faktury-online.com/api/init
+          configuration: '{ "method": "GET", "headers": {"key": "${{ secrets.API_KEY }}", "email": "${{ secrets.EMAIL }}" } }'
