@@ -1,7 +1,6 @@
 on:
   schedule:
-    - cron: '10 16 * * *' 
-    - cron: '30 5 * * 2,4'
+    - cron: '24 19 * * *' 
 
 jobs:
   refresh-feed:
