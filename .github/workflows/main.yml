@@ -11,12 +11,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Fetch API Data 📦
+      - name: Fetch API Data 📦 - init
         uses: JamesIves/fetch-api-data-action@v2
         with:
           endpoint: https://www.faktury-online.com/api/init
           configuration: '{ "method": "GET", "headers": {"key": "${{ secrets.API_KEY }}", "email": "${{ secrets.EMAIL }}" } }'
-      - name: Fetch API Data 📦
+      - name: Fetch API Data 📦 - list
         uses: JamesIves/fetch-api-data-action@v2
         with:
           endpoint: https://www.faktury-online.com/api/list/created
