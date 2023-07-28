@@ -16,6 +16,11 @@ jobs:
         with:
           endpoint: https://www.faktury-online.com/api/init
           configuration: '{ "method": "GET", "headers": {"key": "${{ secrets.API_KEY }}", "email": "${{ secrets.EMAIL }}" } }'
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://www.faktury-online.com/api/list/created
+          configuration: '{ "method": "GET", "headers": {"key": "${{ secrets.API_KEY }}", "email": "${{ secrets.EMAIL }}" } }'
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
